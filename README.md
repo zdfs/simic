@@ -1,1 +1,3 @@
-#Simic A poetry editor
+#Simic
+
+A poetry editor
