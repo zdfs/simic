@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Simic from './Simic';
+import Simic from './components/Simic/Simic';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

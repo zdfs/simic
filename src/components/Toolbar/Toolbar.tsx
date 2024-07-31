@@ -34,7 +34,7 @@ import {
 	Undo2Icon,
 } from 'lucide-react';
 
-import './ToolbarPlugin.css';
+import './Toolbar.css';
 
 const LowPriority = 1;
 

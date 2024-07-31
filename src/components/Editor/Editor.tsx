@@ -8,7 +8,7 @@ import { ContentEditable } from '@lexical/react/LexicalContentEditable';
 import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin';
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary';
 
-import ToolbarPlugin from './plugins/ToolbarPlugin';
+import ToolbarPlugin from '../Toolbar/Toolbar';
 
 import './Editor.css';
 
