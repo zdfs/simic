@@ -16,7 +16,7 @@ function Simic() {
 				<div className="flex flex-1 flex-row overflow-y-hidden">
 					<main
 						role="main"
-						className="flex-1 text-xs p-2 overflow-y-auto"
+						className="flex-1 text-xs overflow-y-auto"
 					>
 						<Editor />
 					</main>
