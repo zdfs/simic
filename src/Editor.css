@@ -25,4 +25,10 @@
 	p {
 		font-size: theme(fontSize.lg);
 	}
+
+	[contenteditable] {
+		&:focus-visible {
+			outline: none;
+		}
+	}
 }
