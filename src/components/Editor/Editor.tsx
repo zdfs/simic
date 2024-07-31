@@ -22,7 +22,9 @@ const theme = {
 };
 
 const placeholder = (
-	<p className="top-0 absolute pointer-events-none">write a poem...</p>
+	<p className="top-0 absolute pointer-events-none placeholder">
+		write a poem...
+	</p>
 );
 
 const editorConfig = {

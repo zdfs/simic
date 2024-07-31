@@ -42,5 +42,11 @@
 		&:focus-visible {
 			outline: none;
 		}
+
+		&:focus {
+			+ .placeholder {
+				color: transparent;
+			}
+		}
 	}
 }
