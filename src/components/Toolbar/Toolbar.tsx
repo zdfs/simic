@@ -102,7 +102,7 @@ export default function ToolbarPlugin() {
 			className="toolbar fixed w-[60ch] z-10 flex space-x-2 p-2"
 			ref={toolbarRef}
 		>
-			<button
+			{/* <button
 				disabled={!canUndo}
 				onClick={() => {
 					editor.dispatchCommand(UNDO_COMMAND, undefined);
@@ -122,7 +122,7 @@ export default function ToolbarPlugin() {
 			>
 				<Redo2 size={16} />
 			</button>
-			<Divider />
+			<Divider /> */}
 			<button
 				onClick={() => {
 					editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'bold');
@@ -142,6 +142,7 @@ export default function ToolbarPlugin() {
 				<ItalicIcon size={16} />
 			</button>
 			<button
+				disabled={isStrikethrough}
 				onClick={() => {
 					editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'underline');
 				}}
@@ -153,6 +154,7 @@ export default function ToolbarPlugin() {
 				<UnderlineIcon size={16} />
 			</button>
 			<button
+				disabled={isUnderline}
 				onClick={() => {
 					editor.dispatchCommand(
 						FORMAT_TEXT_COMMAND,
@@ -194,7 +196,7 @@ export default function ToolbarPlugin() {
 			>
 				<AlignRightIcon size={16} />
 			</button>
-			<button
+			{/* <button
 				onClick={() => {
 					editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'justify');
 				}}
@@ -202,7 +204,7 @@ export default function ToolbarPlugin() {
 				aria-label="Justify Align"
 			>
 				<AlignJustifyIcon size={16} />
-			</button>{' '}
+			</button>{' '} */}
 		</div>
 	);
 }

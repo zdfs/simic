@@ -36,9 +36,11 @@
 
 	p {
 		font-size: theme(fontSize.lg);
+		@apply leading-relaxed;
 	}
 
 	[contenteditable] {
+		@apply mt-8;
 		&:focus-visible {
 			outline: none;
 		}

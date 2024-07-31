@@ -4,4 +4,8 @@
 
 .toolbar {
 	background-color: theme(colors.primary.100);
+
+	button:disabled {
+		opacity: 50%;
+	}
 }
