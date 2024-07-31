@@ -8,18 +8,30 @@
 	font-style: normal;
 	min-height: 250px;
 
-	i,
-	em {
+	.textItalic {
 		font-family: 'adobe-garamond-pro', serif;
 		font-weight: 400;
 		font-style: italic;
 	}
 
-	b,
-	strong {
+	.textBold {
 		font-family: 'adobe-garamond-pro', serif;
 		font-weight: 700;
 		font-style: normal;
+	}
+
+	.textBold.textItalic {
+		font-family: 'adobe-garamond-pro', serif;
+		font-weight: 700;
+		font-style: italic;
+	}
+
+	.textStrikethrough {
+		text-decoration: line-through;
+	}
+
+	.textUnderline {
+		text-decoration: underline;
 	}
 
 	p {

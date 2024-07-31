@@ -12,7 +12,14 @@ import ToolbarPlugin from '../Toolbar/Toolbar';
 
 import './Editor.css';
 
-const theme = {};
+const theme = {
+	text: {
+		bold: 'textBold',
+		italic: 'textItalic',
+		strikethrough: 'textStrikethrough',
+		underline: 'textUnderline',
+	},
+};
 
 const placeholder = (
 	<p className="top-0 absolute pointer-events-none">write a poem...</p>
