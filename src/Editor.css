@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.editor-inner {
+	font-family: 'adobe-garamond-pro', serif;
+	font-weight: 400;
+	font-style: normal;
+	min-height: 250px;
+
+	i,
+	em {
+		font-family: 'adobe-garamond-pro', serif;
+		font-weight: 400;
+		font-style: italic;
+	}
+
+	b,
+	strong {
+		font-family: 'adobe-garamond-pro', serif;
+		font-weight: 700;
+		font-style: normal;
+	}
+
+	p {
+		font-size: theme(fontSize.lg);
+	}
+}

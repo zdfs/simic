@@ -34,12 +34,12 @@ import {
 	Undo2Icon,
 } from 'lucide-react';
 
+import './ToolbarPlugin.css';
+
 const LowPriority = 1;
 
 function Divider() {
-	return (
-		<MinusIcon size={20} color="#999" className="rotate-90 -mt-2 inline" />
-	);
+	return <MinusIcon size={20} color="#999" className="rotate-90 inline" />;
 }
 
 export default function ToolbarPlugin() {
@@ -98,13 +98,16 @@ export default function ToolbarPlugin() {
 	}, [editor, $updateToolbar]);
 
 	return (
-		<div className="toolbar" ref={toolbarRef}>
+		<div
+			className="toolbar flex space-x-2 -mt-2 -ml-2 p-2"
+			ref={toolbarRef}
+		>
 			<button
 				disabled={!canUndo}
 				onClick={() => {
 					editor.dispatchCommand(UNDO_COMMAND, undefined);
 				}}
-				className="toolbar-item spaced"
+				className="toolbar-item"
 				aria-label="Undo"
 			>
 				<Undo2Icon size={16} />

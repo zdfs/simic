@@ -10,6 +10,8 @@ import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary';
 
 import ToolbarPlugin from './plugins/ToolbarPlugin';
 
+import './Editor.css';
+
 const theme = {};
 
 const placeholder = (
@@ -33,8 +35,8 @@ function onError(error: Error) {
 function Editor() {
 	return (
 		<LexicalComposer initialConfig={editorConfig}>
-			<div className="editor-container rounded-xl w-full border p-4">
-				<ToolbarPlugin />
+			<ToolbarPlugin />
+			<div className="editor-container rounded-xl w-[60ch] p-4">
 				<div className="relative">
 					<div className="editor-inner">
 						<RichTextPlugin
