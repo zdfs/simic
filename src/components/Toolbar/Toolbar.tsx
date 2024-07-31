@@ -98,7 +98,10 @@ export default function ToolbarPlugin() {
 	}, [editor, $updateToolbar]);
 
 	return (
-		<div className="toolbar flex space-x-2 p-2" ref={toolbarRef}>
+		<div
+			className="toolbar fixed w-[60ch] z-10 flex space-x-2 p-2"
+			ref={toolbarRef}
+		>
 			<button
 				disabled={!canUndo}
 				onClick={() => {

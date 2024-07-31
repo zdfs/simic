@@ -45,7 +45,7 @@ function Editor() {
 	return (
 		<LexicalComposer initialConfig={editorConfig}>
 			<ToolbarPlugin />
-			<div className="editor-container rounded-xl w-[60ch] p-4">
+			<div className="editor-container border-r h-full w-[60ch] p-4">
 				<div className="relative">
 					<div className="editor-inner">
 						<RichTextPlugin
