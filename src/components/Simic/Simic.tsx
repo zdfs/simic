@@ -20,9 +20,9 @@ function Simic() {
 					>
 						<Editor />
 					</main>
-					<nav className="border-r order-first w-36 sm:w-32 p-2 overflow-y-auto">
+					<nav className="border-r order-first w-52 p-2 overflow-y-auto">
 						<ul>
-							<li>test</li>
+							<li>document list</li>
 						</ul>
 					</nav>
 				</div>
