@@ -1,0 +1,134 @@
+import Editor from '../Editor/Editor';
+
+import './Simic.css';
+
+function Simic() {
+	return (
+		<>
+			<div className="min-h-screen h-screen flex flex-col border-r border-neutral-600">
+				<header className="font-extrabold border-b tracking-tight sm:text-3xl p-4 pb-0">
+					<h1>Simic</h1>
+					<p className="font-bold text-xs tracking-tight pt-0 pb-2">
+						A Poetry Editor
+					</p>
+				</header>
+
+				<div className="flex flex-1 flex-row overflow-y-hidden">
+					<main
+						role="main"
+						className="flex-1 text-xs overflow-y-auto"
+					>
+						<Editor />
+					</main>
+					<nav className="border-r order-first w-52 p-2 overflow-y-auto">
+						<ul>
+							<li>document list</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</>
+	);
+}
+
+export default Simic;
+
+
+								<LinkList.Root>
+									<LinkList.Group value="Account">
+										<LinkList.Trigger>
+											<LinkList.Icon>
+												<Users />
+											</LinkList.Icon>
+											Account
+										</LinkList.Trigger>
+										<LinkList.Content>
+											<LinkList.Link link="/">
+												General
+											</LinkList.Link>
+											<LinkList.Link link="/">
+												Affiliates
+											</LinkList.Link>
+											<LinkList.Link link="/">
+												Products
+											</LinkList.Link>
+											<LinkList.Link link="/">
+												Discounts
+											</LinkList.Link>
+										</LinkList.Content>
+									</LinkList.Group>
+									<LinkList.Group value="settings">
+										<LinkList.Trigger>
+											<LinkList.Icon>
+												<Settings />
+											</LinkList.Icon>
+											Settings
+										</LinkList.Trigger>
+										<LinkList.Content>
+											<LinkList.Link link="/">
+												General
+											</LinkList.Link>
+											<LinkList.Link link="/">
+												Affiliates
+											</LinkList.Link>
+											<LinkList.Link link="/">
+												Products
+											</LinkList.Link>
+											<LinkList.Link link="/">
+												Discounts
+											</LinkList.Link>
+										</LinkList.Content>
+									</LinkList.Group>
+								</LinkList.Root>
+
+
+								<div className="mt-auto h-fit space-y-4">
+						{isBannerVisible && (
+							<Card
+								variant="soft"
+								className="relative [--card-padding:1.25rem] dark:[--ui-soft-bg:theme(colors.gray.500/0.10)]"
+							>
+								<Button.Root
+									className="absolute right-2 top-2"
+									size="xs"
+									variant="ghost"
+									intent="gray"
+									onClick={() => setIsBannerVisible(false)}
+								>
+									<Button.Icon type="only" size="xs">
+										<X />
+									</Button.Icon>
+								</Button.Root>
+								<Title as="div" size="base" className="text-sm">
+									Storage almost full
+								</Title>
+								<Text size="sm" className="mb-0 mt-2">
+									Upgrade your plan to get more storage
+								</Text>
+								<Progress.Root
+									value={80}
+									data-orientation="vertical"
+									size="sm"
+									className="mt-4"
+								>
+									<Progress.Indicator
+										className="w-4/5"
+										intent="warning"
+										loading="warning"
+										complete="danger"
+									/>
+								</Progress.Root>
+								<Button.Root
+									variant="outlined"
+									intent="gray"
+									size="xs"
+									className="mt-4 font-medium"
+								>
+									<Button.Label className="text-primary-600 dark:text-primary-400">
+										Upgrade plan
+									</Button.Label>
+								</Button.Root>
+							</Card>
+						)}
+						<UserDropdown />
+					</div>

@@ -7,13 +7,5 @@
 		{
 			"path": "./tsconfig.node.json"
 		}
-	],
-	"compilerOptions": {
-		/* Paths */
-		"baseUrl": "./src",
-		"paths": {
-			"@tailus-ui/*": ["/components/tailus-ui/*"],
-			"@utils/*": ["/utils/*"]
-		}
-	}
+	]
 }

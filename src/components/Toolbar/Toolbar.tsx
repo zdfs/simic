@@ -6,6 +6,7 @@
  *
  */
 import { useCallback, useEffect, useRef, useState } from 'react';
+import useTailwind from '../../hooks/use-tailwind';
 
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
 import { mergeRegister } from '@lexical/utils';
@@ -51,6 +52,8 @@ export default function ToolbarPlugin() {
 	const [isItalic, setIsItalic] = useState(false);
 	const [isUnderline, setIsUnderline] = useState(false);
 	const [isStrikethrough, setIsStrikethrough] = useState(false);
+
+	const tailwind = useTailwind();
 
 	const $updateToolbar = useCallback(() => {
 		const selection = $getSelection();
@@ -99,7 +102,7 @@ export default function ToolbarPlugin() {
 
 	return (
 		<div
-			className="toolbar fixed w-[60ch] z-10 flex space-x-2 p-2"
+			className="toolbar bg-gray-50 dark:bg-gray-950 z-10 flex space-x-2 p-2 border-r"
 			ref={toolbarRef}
 		>
 			{/* <button
@@ -130,7 +133,8 @@ export default function ToolbarPlugin() {
 				className={'toolbar-item spaced ' + (isBold ? 'active' : '')}
 				aria-label="Format Bold"
 			>
-				<BoldIcon size={16} />
+				{/* Need a way to suss out dark mode */}
+				<BoldIcon size={16} color={tailwind.theme.colors.gray['50']} />
 			</button>
 			<button
 				onClick={() => {
@@ -139,7 +143,10 @@ export default function ToolbarPlugin() {
 				className={'toolbar-item spaced ' + (isItalic ? 'active' : '')}
 				aria-label="Format Italics"
 			>
-				<ItalicIcon size={16} />
+				<ItalicIcon
+					size={16}
+					color={tailwind.theme.colors.gray['50']}
+				/>
 			</button>
 			<button
 				disabled={isStrikethrough}
@@ -151,7 +158,10 @@ export default function ToolbarPlugin() {
 				}
 				aria-label="Format Underline"
 			>
-				<UnderlineIcon size={16} />
+				<UnderlineIcon
+					size={16}
+					color={tailwind.theme.colors.gray['50']}
+				/>
 			</button>
 			<button
 				disabled={isUnderline}
@@ -166,7 +176,10 @@ export default function ToolbarPlugin() {
 				}
 				aria-label="Format Strikethrough"
 			>
-				<StrikethroughIcon size={16} />
+				<StrikethroughIcon
+					size={16}
+					color={tailwind.theme.colors.gray['50']}
+				/>
 			</button>
 			<Divider />
 			<button
@@ -176,7 +189,10 @@ export default function ToolbarPlugin() {
 				className="toolbar-item spaced"
 				aria-label="Left Align"
 			>
-				<AlignLeftIcon size={16} />
+				<AlignLeftIcon
+					size={16}
+					color={tailwind.theme.colors.gray['50']}
+				/>
 			</button>
 			<button
 				onClick={() => {
@@ -185,7 +201,10 @@ export default function ToolbarPlugin() {
 				className="toolbar-item spaced"
 				aria-label="Center Align"
 			>
-				<AlignCenterIcon size={16} />
+				<AlignCenterIcon
+					size={16}
+					color={tailwind.theme.colors.gray['50']}
+				/>
 			</button>
 			<button
 				onClick={() => {
@@ -194,7 +213,10 @@ export default function ToolbarPlugin() {
 				className="toolbar-item spaced"
 				aria-label="Right Align"
 			>
-				<AlignRightIcon size={16} />
+				<AlignRightIcon
+					size={16}
+					color={tailwind.theme.colors.gray['50']}
+				/>
 			</button>
 			{/* <button
 				onClick={() => {

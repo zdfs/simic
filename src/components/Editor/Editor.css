@@ -45,6 +45,10 @@
 			outline: none;
 		}
 
+		+ .placeholder {
+			color: theme('colors.gray.400');
+		}
+
 		&:focus {
 			+ .placeholder {
 				color: transparent;

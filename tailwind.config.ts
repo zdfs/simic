@@ -1,4 +1,11 @@
-import { palettes } from '@tailus/themer';
+import {
+	shade,
+	rounded,
+	animations,
+	components,
+	grays,
+	palettes,
+} from '@tailus/themer';
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -9,8 +16,11 @@ export default {
 	],
 	theme: {
 		extend: {
-			colors: palettes.trust,
+			colors: {
+				...palettes.trust,
+				gray: grays.neutral,
+			},
 		},
 	},
-	plugins: [],
+	plugins: [shade, components, animations, rounded],
 };
