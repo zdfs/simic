@@ -3,25 +3,19 @@
 @tailwind utilities;
 
 .editor-inner {
-	font-family: 'adobe-garamond-pro', serif;
-	font-weight: 400;
-	font-style: normal;
 	min-height: 250px;
 
 	.textItalic {
-		font-family: 'adobe-garamond-pro', serif;
 		font-weight: 400;
 		font-style: italic;
 	}
 
 	.textBold {
-		font-family: 'adobe-garamond-pro', serif;
 		font-weight: 700;
 		font-style: normal;
 	}
 
 	.textBold.textItalic {
-		font-family: 'adobe-garamond-pro', serif;
 		font-weight: 700;
 		font-style: italic;
 	}
