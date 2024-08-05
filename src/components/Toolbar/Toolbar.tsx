@@ -11,6 +11,7 @@ import useTailwind from '../../hooks/use-tailwind';
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
 import { mergeRegister } from '@lexical/utils';
 import {
+	$createParagraphNode,
 	$getSelection,
 	$isRangeSelection,
 	CAN_REDO_COMMAND,
@@ -21,6 +22,9 @@ import {
 	SELECTION_CHANGE_COMMAND,
 	UNDO_COMMAND,
 } from 'lexical';
+import { $setBlocksType } from '@lexical/selection';
+import { $createTitle, $isTitle } from '../../nodes/Title';
+import { getSelectedNode } from '@utils/getSelectedNode';
 import {
 	AlignCenterIcon,
 	AlignJustifyIcon,
@@ -57,6 +61,7 @@ export default function ToolbarPlugin() {
 
 	const $updateToolbar = useCallback(() => {
 		const selection = $getSelection();
+
 		if ($isRangeSelection(selection)) {
 			// Update text format
 			setIsBold(selection.hasFormat('bold'));
@@ -100,9 +105,25 @@ export default function ToolbarPlugin() {
 		);
 	}, [editor, $updateToolbar]);
 
+	const formatTitle = () => {
+		editor.update(() => {
+			const selection = $getSelection();
+
+			if ($isRangeSelection(selection)) {
+				const node = getSelectedNode(selection);
+				console.log(node);
+				if ($isTitle(node)) {
+					$setBlocksType(selection, () => $createParagraphNode());
+				} else {
+					$setBlocksType(selection, () => $createTitle());
+				}
+			}
+		});
+	};
+
 	return (
 		<div
-			className="toolbar bg-gray-50 dark:bg-gray-950 z-10 flex space-x-2 p-2 border-r"
+			className="toolbar bg-gray-50 dark:bg-gray-950 z-10 flex space-x-2 p-2 border-r text-gray-100"
 			ref={toolbarRef}
 		>
 			{/* <button
@@ -126,6 +147,7 @@ export default function ToolbarPlugin() {
 				<Redo2 size={16} />
 			</button>
 			<Divider /> */}
+			<button onClick={formatTitle}>Title</button>
 			<button
 				onClick={() => {
 					editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'bold');

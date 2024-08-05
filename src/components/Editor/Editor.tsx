@@ -8,6 +8,7 @@ import { ContentEditable } from '@lexical/react/LexicalContentEditable';
 import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin';
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary';
 
+import { Title } from '../../nodes/Title';
 import ToolbarPlugin from '../Toolbar/Toolbar';
 
 import './Editor.css';
@@ -29,7 +30,7 @@ const placeholder = (
 
 const editorConfig = {
 	namespace: 'Simic',
-	nodes: [],
+	nodes: [Title],
 	theme,
 	onError,
 };
@@ -45,7 +46,7 @@ function Editor() {
 	return (
 		<LexicalComposer initialConfig={editorConfig}>
 			<ToolbarPlugin />
-			<div className="editor-container border-r h-max min-h-full p-4">
+			<div className="editor-container border-r h-max min-h-full p-4 text-gray-100">
 				<div className="relative">
 					<div className="editor-inner">
 						<RichTextPlugin
